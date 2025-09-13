@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Putzz Hosting - Cyber UI</title>
+  <style>
+    /* Warna utama */
+    :root {
+      --neon-cyan: #00ffe0;
+      --neon-pink: #ff2bd4;
+      --neon-green: #39ff14;
+      --bg-dark: #0a0f1c;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top left, rgba(0,255,224,0.08), transparent 40%),
+                  radial-gradient(circle at bottom right, rgba(255,43,212,0.08), transparent 40%),
+                  linear-gradient(180deg, #05010f, #0a0f1c 80%);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.4);
+      border-bottom: 1px solid rgba(0,255,224,0.2);
+      box-shadow: 0 0 30px rgba(0,255,224,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 8px var(--neon-cyan), 0 0 15px var(--neon-pink);
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Container produk */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px 25px;
+    }
+
+    /* Card Produk */
+    .produk {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,255,224,0.2);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 15px rgba(0,255,224,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .produk::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(0,255,224,0.05), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+
+    .produk:hover::before {
+      transform: translateX(100%);
+    }
+
+    .produk:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0,255,224,0.3), 0 0 40px rgba(255,43,212,0.15);
+    }
+
+    .produk h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 6px var(--neon-cyan), 0 0 12px var(--neon-cyan);
+    }
+
+    .produk p {
+      margin: 12px 0;
+      font-size: 1.1rem;
+      color: #eee;
+    }
+
+    /* Tombol beli */
+    .produk button {
+      background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
+      border: none;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-pink);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .produk button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px var(--neon-cyan), 0 0 35px var(--neon-pink);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(0,255,224,0.2);
+      box-shadow: 0 -2px 20px rgba(0,255,224,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ Putzz Hosting ⚡</h1>
+    <p>Panel Murah • Cepat • Aman • Langsung Order 🤖</p>
+  </header>
+
+  <h2 style="text-align:center;margin:25px 0;color:var(--neon-pink);text-shadow:0 0 8px var(--neon-pink);">
+    LIST PANEL & SCRIPT 🔥
+  </h2>
+
+  <div class="container">
+    <div class="produk"><h3>Panel 1GB</h3><p>Rp 1.000</p><button onclick="beli('Panel 1GB',1000)">Beli</button></div>
+    <div class="produk"><h3>Panel 2GB</h3><p>Rp 2.000</p><button onclick="beli('Panel 2GB',2000)">Beli</button></div>
+    <div class="produk"><h3>Panel 3GB</h3><p>Rp 3.000</p><button onclick="beli('Panel 3GB',3000)">Beli</button></div>
+    <div class="produk"><h3>Panel 4GB</h3><p>Rp 4.000</p><button onclick="beli('Panel 4GB',4000)">Beli</button></div>
+    <div class="produk"><h3>Panel 5GB</h3><p>Rp 5.000</p><button onclick="beli('Panel 5GB',5000)">Beli</button></div>
+    <div class="produk"><h3>Panel 6GB</h3><p>Rp 6.000</p><button onclick="beli('Panel 6GB',6000)">Beli</button></div>
+    <div class="produk"><h3>Panel 7GB</h3><p>Rp 7.000</p><button onclick="beli('Panel 7GB',7000)">Beli</button></div>
+    <div class="produk"><h3>Panel 8GB</h3><p>Rp 8.000</p><button onclick="beli('Panel 8GB',8000)">Beli</button></div>
+    <div class="produk"><h3>Panel 9GB</h3><p>Rp 9.000</p><button onclick="beli('Panel 9GB',9000)">Beli</button></div>
+    <div class="produk"><h3>Panel 10GB</h3><p>Rp 10.000</p><button onclick="beli('Panel 10GB',10000)">Beli</button></div>
+    <div class="produk"><h3>Panel Unli</h3><p>Rp 11.000</p><button onclick="beli('Panel Unli',11000)">Beli</button></div>
+    <div class="produk"><h3>Admin Panel</h3><p>Rp 13.000</p><button onclick="beli('Admin Panel',13000)">Beli</button></div>
+    <div class="produk"><h3>Script Bot</h3><p>Rp 20.000</p><button onclick="beli('Script Bot',20000)">Beli</button></div>
+    <div class="produk"><h3>Sewa Bot</h3><p>Rp 3.000</p><button onclick="beli('Sewa Bot',3000)">Beli</button></div>
+  </div>
+
+  <footer>
+    <p>📞 Kontak Developer: <strong>6288976255131</strong></p>
+  </footer>
+
+  <script>
+    function beli(nama, harga) {
+      let nomor = "6288976255131";
+      let pesan = `Halo owner dev, saya mau beli ${nama} dengan harga Rp ${harga.toLocaleString()}`;
+      let url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
